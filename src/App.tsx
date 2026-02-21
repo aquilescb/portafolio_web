@@ -1,5 +1,11 @@
-function App() {
-   return <div className="bg-red-500 text-white p-4">Hola mundo</div>;
-}
+import { RouterProvider } from "react-router-dom";
+import { router } from "../src/app/router/routes";
+import { AppProviders } from "../src/app/providers/AppProviders";
 
-export default App;
+export function App() {
+   return (
+      <AppProviders>
+         <RouterProvider router={router} />
+      </AppProviders>
+   );
+}

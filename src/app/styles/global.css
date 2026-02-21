@@ -1,1 +1,40 @@
 @import "tailwindcss";
+/* src/app/styles/globals.css */
+
+:root {
+   /* Brand */
+   --primary: #2563eb;
+   --primary-hover: #1d4ed8;
+   --primary-soft: #3b82f6;
+
+   --secondary: #7c3aed;
+   --secondary-hover: #6d28d9;
+   --secondary-soft: #8b5cf6;
+
+   /* Light defaults */
+   --bg: #ffffff;
+   --surface: #f8fafc;
+   --text: #0f172a;
+   --muted: #475569;
+   --border: #e2e8f0;
+}
+
+html[data-theme="dark"] {
+   --bg: #0f172a;
+   --surface: #111827;
+   --text: #e5e7eb;
+   --muted: #94a3b8;
+   --border: #1f2937;
+}
+
+/* Base */
+html,
+body {
+   height: 100%;
+}
+
+body {
+   margin: 0;
+   background: var(--bg);
+   color: var(--text);
+}

@@ -1,102 +1,131 @@
+```
 src/
-app/
-providers/
-AppProviders.tsx
-ThemeProvider.tsx
-I18nProvider.tsx
-router/
-routes.tsx
-lazy.ts
-layouts/
-RootLayout.tsx
-PageLayout.tsx
-ProjectsLayout.tsx
-styles/
-globals.css
-tailwind.css
-main.tsx
-App.tsx
+   app/
+      layouts/
+         RootLayout.tsx
+      providers/
+         AppProviders.tsx
+         ThemeProvider.tsx
+         I18nProvider.tsx
+         I18nContext.ts
+         ThemeContext.ts
+         useI18n.ts
+         useTheme.ts
+         router/
+            routes.tsx
+            lazy.ts
+      styles/
+         globals.css
 
-shared/
-ui/
-primitives/ # Button, Badge, Card, Input, Textarea, Skeleton...
-layout/ # Container, Section, Grid, Stack...
-feedback/ # Toast, EmptyState, Loading...
-navigation/ # Navbar, Footer, LanguageToggle, ThemeToggle
-lib/
-cn.ts
-motion.ts # presets framer-motion
-routes.ts # helpers (buildProjectUrl)
-hooks/
-useLocalStorage.ts
-useMediaQuery.ts
-config/
-site.ts # name, socials, SEO defaults
-constants.ts
-types/
-common.ts
+   assets/
+      images/
+      certificates/
 
-entities/
-project/
-model/
-types.ts
-selectors.ts
-ui/
-ProjectCard.tsx
-TechStackBadges.tsx
-timeline/
-model/types.ts
-ui/Timeline.tsx
+   content/
+      i18n/
+         es.ts
+         en.ts
+      projects/
+         index.ts
+      experience.ts
+      journey.ts
+      about.ts
 
-features/
-home/
-ui/HomePage.tsx
-ui/sections/
-Hero.tsx
-StackCarousel.tsx
-FeaturedProjects.tsx
-projects/
-model/
-getProjects.ts # usa content/
-ui/
-ProjectsPage.tsx
-ProjectDetailPage.tsx
-components/
-ProjectHero.tsx
-ProjectSection.tsx
-ResourceLinks.tsx
-VideoGallery.tsx
-experience/
-ui/ExperiencePage.tsx
-ui/components/ExperienceItem.tsx
-journey/
-ui/JourneyPage.tsx
-ui/components/
-JourneyTimeline.tsx
-CertificationsGrid.tsx
-Achievements.tsx
-about/
-ui/AboutPage.tsx
-contact/
-ui/ContactPage.tsx
-model/sendContact.ts # stub / mailto / form endpoint futuro
+   entities/
+      project/
+         model/
+            types.ts
+         ui/
+            ProjectCard.tsx
+      journey/
+         model/
+            types.ts
+         ui/
+            JourneyBadge.tsx
+            JourneyTimeLine.tsx
+            JourneyTimelineItem.tsx
+      experiencie/
+         model/
+            types.ts
+         ui/
+            Experience.tsx
 
-content/
-projects/
-index.ts # lista + lookup por slug
-sgi-fundacion.ts
-ciro-nova.ts
-experience.ts
-journey.ts
-education.ts
-certifications.ts
-achievements.ts
-i18n/
-es.ts
-en.ts
+   features/
+      about/
+         ui/
+            componenets/
+                InfoCard.tsx
+                AboutSection.tsx
+            AboutPage.tsx
 
-assets/
-images/
-certificates/
-cv/
-Aquiles-Cancinos-CV.pdf
+      contact/
+         model/
+            sendContact.ts
+         ui/
+            ContactPage.tsx
+
+      experience/
+         ui/
+            ExperiencePage.tsx
+
+      home/
+         ui/
+            sections/
+               Hero.tsx
+               StackCarousel.tsx
+               FeaturedProjects.tsx
+            HomePage.tsx
+
+      journey/
+         ui/
+            JourneyPage.tsx
+
+      projects/
+         model/
+            projectFilters.ts
+         ui/
+            components/
+               ProjectHero.tsx
+               ProjectSection.tsx
+               ResourceLinks.tsx
+            skeletons/
+               ProjectDetailSkeleton.tsx
+               ProjectsGridSkeleton.tsx
+            ProjectsPage.tsx
+            ProjectDetailPage.tsx
+
+   shared/
+      ui/
+         primitives/
+            Button.tsx
+         layout/
+            MotionSection.tsx
+         feedback/
+            RouteLoading.tsx
+            Skeleton.tsx
+         navigation/
+            Footer.tsx
+            Navbar.tsx
+      lib/
+         cn.ts
+      hooks/
+         usePageMeta.ts
+      config/
+         site.ts
+   main.tsx
+   App.tsx
+public/cv
+   Aquiles-Cancinos-CV.pdf
+
+```
+
+COMMITS
+`feat:` nueva funcionalidad
+
+- `fix:` bug
+- `refactor:` refactor sin cambiar comportamiento
+- `style:` estilos (no lógica)
+- `chore:` tooling/config
+- `docs:` documentación/README
+- `perf:` performance
+- `test:` tests
