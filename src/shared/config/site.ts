@@ -3,7 +3,7 @@ export const site = {
    titleTemplate: "%s · Aquiles Cancinos",
    description:
       "Portfolio profesional: proyectos, experiencia y trayectoria. React + TypeScript + arquitectura escalable.",
-   url: "https://tu-dominio.com", // si no tenés, dejalo igual por ahora
-   ogImage: "/og/og-default.png", // poné una imagen en public/og/
+   url: "",
+   ogImage: "/og/og-default.png",
    twitterHandle: "", // opcional: "@usuario"
-};
+} as const;

@@ -10,10 +10,11 @@ type PageMeta = {
 };
 
 function ensureMeta(selector: string, create: () => HTMLMetaElement) {
-   let el = document.head.querySelector(selector) as HTMLMetaElement | null;
+   const head = document.head;
+   let el = head.querySelector(selector) as HTMLMetaElement | null;
    if (!el) {
       el = create();
-      document.head.appendChild(el);
+      head.appendChild(el);
    }
    return el;
 }
@@ -36,20 +37,31 @@ function setMetaProperty(property: string, content: string) {
    el.setAttribute("content", content);
 }
 
-function setCanonical(href: string) {
-   let link = document.head.querySelector(
+function setCanonical(href?: string) {
+   const head = document.head;
+   let link = head.querySelector(
       'link[rel="canonical"]',
    ) as HTMLLinkElement | null;
+
+   if (!href) {
+      // Si no hay href, removemos canonical si existe (opcional pero prolijo)
+      if (link) link.remove();
+      return;
+   }
+
    if (!link) {
       link = document.createElement("link");
       link.rel = "canonical";
-      document.head.appendChild(link);
+      head.appendChild(link);
    }
+
    link.href = href;
 }
 
 export function usePageMeta(meta: PageMeta) {
    useEffect(() => {
+      if (typeof document === "undefined") return;
+
       const fullTitle = site.titleTemplate.replace("%s", meta.title);
       document.title = fullTitle;
 
@@ -57,13 +69,12 @@ export function usePageMeta(meta: PageMeta) {
       setMetaName("description", desc);
 
       // Robots
-      if (meta.noIndex) setMetaName("robots", "noindex,nofollow");
-      else setMetaName("robots", "index,follow");
+      setMetaName("robots", meta.noIndex ? "noindex,nofollow" : "index,follow");
 
       // Canonical
-      if (meta.path && site.url) {
-         setCanonical(`${site.url}${meta.path}`);
-      }
+      const canonical =
+         meta.path && site.url ? `${site.url}${meta.path}` : undefined;
+      setCanonical(canonical);
 
       // Open Graph
       const ogImage = meta.ogImage ?? site.ogImage;
@@ -77,7 +88,7 @@ export function usePageMeta(meta: PageMeta) {
       setMetaProperty("og:type", "website");
       setMetaProperty("og:image", ogImage);
 
-      // Twitter (opcional)
+      // Twitter
       setMetaName("twitter:card", "summary_large_image");
       if (site.twitterHandle) setMetaName("twitter:site", site.twitterHandle);
       setMetaName("twitter:title", fullTitle);

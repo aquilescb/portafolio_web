@@ -4,12 +4,11 @@ src/
       layouts/
          RootLayout.tsx
       providers/
+         i18n/
+            i18m.ts
          AppProviders.tsx
          ThemeProvider.tsx
-         I18nProvider.tsx
-         I18nContext.ts
          ThemeContext.ts
-         useI18n.ts
          useTheme.ts
          router/
             routes.tsx
@@ -22,77 +21,77 @@ src/
       certificates/
 
    content/
+      about/
+         es.ts
+         en.ts
+         index.ts
+      experience/
+         es.ts
+         en.ts
+         index.ts
       i18n/
          es.ts
          en.ts
-      projects/
+      journey/
+         es.ts
+         en.ts
          index.ts
-      experience.ts
-      journey.ts
-      about.ts
+      projects/
+         es.ts
+         en.ts
+         index.ts
 
    entities/
-      project/
-         model/
-            types.ts
-         ui/
-            ProjectCard.tsx
+      about/
+         types.ts
+      experience/
+         ExperienceItem.tsx
+         types.ts
       journey/
-         model/
-            types.ts
-         ui/
-            JourneyBadge.tsx
-            JourneyTimeLine.tsx
-            JourneyTimelineItem.tsx
-      experiencie/
-         model/
-            types.ts
-         ui/
-            Experience.tsx
+         JourneyBadge.tsx
+         JourneyTimeLine.tsx
+         JourneyTimelineItem.tsx
+         types.ts
+      project/
+         ProjectCard.tsx
+         types.ts
+
 
    features/
       about/
-         ui/
-            componenets/
-                InfoCard.tsx
-                AboutSection.tsx
-            AboutPage.tsx
+         componenets/
+            InfoCard.tsx
+            AboutSection.tsx
+         AboutPage.tsx
 
       contact/
-         model/
-            sendContact.ts
-         ui/
-            ContactPage.tsx
+         sendContact.ts
+         ContactPage.tsx
 
       experience/
-         ui/
-            ExperiencePage.tsx
+         ExperiencePage.tsx
 
       home/
-         ui/
-            sections/
-               Hero.tsx
-               StackCarousel.tsx
-               FeaturedProjects.tsx
-            HomePage.tsx
+         sections/
+            Hero.tsx
+            StackCarousel.tsx
+            FeaturedProjects.tsx
+         HomePage.tsx
 
       journey/
-         ui/
-            JourneyPage.tsx
+         JourneyPage.tsx
 
       projects/
-         model/
-            projectFilters.ts
-         ui/
-            components/
-               ProjectHero.tsx
-               ProjectSection.tsx
-               ResourceLinks.tsx
-            skeletons/
-               ProjectDetailSkeleton.tsx
-               ProjectsGridSkeleton.tsx
-            ProjectsPage.tsx
-            ProjectDetailPage.tsx
+         projectFilters.ts
+         components/
+            ProjectHero.tsx
+            ProjectSection.tsx
+            ResourceLinks.tsx
+         skeletons/
+            ProjectDetailSkeleton.tsx
+            ProjectsGridSkeleton.tsx
+         ProjectsPage.tsx
+         ProjectDetailPage.tsx
 
    shared/
       ui/
@@ -110,8 +109,11 @@ src/
          cn.ts
       hooks/
          usePageMeta.ts
+         useContentLang.ts
       config/
          site.ts
+         lang.ts
+
    main.tsx
    App.tsx
 public/cv
