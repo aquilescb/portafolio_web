@@ -21,7 +21,7 @@ export function ProjectDetailPage() {
       return getProjectBySlug(lang, slug);
    }, [lang, slug]);
 
-   // ✅ Hooks siempre arriba, sin conditional returns
+   // Hooks siempre arriba, sin conditional returns
    usePageMeta({
       title: project ? project.title : t("meta.projectNotFound.title"),
       description: project ? project.summary : t("meta.projectNotFound.desc"),

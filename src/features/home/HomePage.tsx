@@ -11,11 +11,11 @@ export function HomePage() {
    usePageMeta({
       title: t("meta.home.title"),
       description: t("meta.home.desc"),
-      path: "/", // no hace falta condicional
+      path: "/",
    });
 
    return (
-      <div className="space-y-14">
+      <div className="space-y-16">
          <Hero />
          <StackCarousel />
          <FeaturedProjects />

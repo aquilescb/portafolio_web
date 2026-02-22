@@ -2,7 +2,7 @@ import type { JourneyEvent } from "./types";
 import { JourneyTimelineItem } from "./JourneyTimelineItem";
 import { motion } from "framer-motion";
 
-export function JourneyTimeline({ items }: { items: JourneyEvent[] }) {
+export function JourneyTimeline({ items }: { items: readonly JourneyEvent[] }) {
    return (
       <div className="relative">
          {/* Línea */}

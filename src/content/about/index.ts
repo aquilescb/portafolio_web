@@ -1,12 +1,13 @@
 import type { ContentLang } from "../../shared/config/lang";
-import { aboutEs, type AboutContent } from "./es";
+import type { AboutContent } from "../../entities/about/types";
+import { aboutEs } from "./es";
 import { aboutEn } from "./en";
 
-const byLang: Record<ContentLang, AboutContent> = {
+const byLang: Record<ContentLang, readonly AboutContent[]> = {
    es: aboutEs,
    en: aboutEn,
 } as const;
 
-export function getAbout(lang: ContentLang): AboutContent {
+export function getAbout(lang: ContentLang): readonly AboutContent[] {
    return byLang[lang];
 }
