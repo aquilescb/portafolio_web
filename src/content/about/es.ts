@@ -1,52 +1,33 @@
 import type { AboutContent } from "../../entities/about/types";
-export const aboutEs: readonly AboutContent[] = [
-   {
-      headline:
-         "Construyo productos con mentalidad de ingeniería: claridad, escalabilidad y experiencia real de uso.",
-      whoIAm: [
-         "Soy Aquiles Cancinos, estudiante de Ingeniería Informática y desarrollador fullstack en progreso.",
-         "Me interesa construir sistemas que se puedan mantener, escalar y entender: arquitectura limpia, tipado fuerte, UI consistente y foco en procesos reales.",
-      ],
-      howIThink: [
-         {
-            title: "Empiezo por el problema real",
-            text: "Antes de codear, traduzco el contexto a requisitos y flujos. Identifico restricciones, usuarios, estados y riesgos. Me importa que el sistema resuelva una necesidad real, no solo 'funcione'.",
-         },
-         {
-            title: "Diseño modular para escalar",
-            text: "Prefiero separar por features y entidades (como producto), con dependencias claras. Esto facilita cambios futuros (nuevo rol, nuevo módulo, backend, CMS) sin reescribir todo.",
-         },
-         {
-            title: "Consistencia y calidad del dato",
-            text: "Valido lo importante, tipado fuerte y contratos claros. Me interesa reducir estados imposibles y errores repetidos con estructuras coherentes.",
-         },
-         {
-            title: "UX como parte del sistema",
-            text: "Un sistema no es solo backend: la interfaz decide si es usable. Diseño estados, loading, empty states, accesibilidad y navegación para que sea fluido.",
-         },
-      ],
-      workMindset: [
-         "Itero rápido con una base sólida (esqueleto → features → detalle).",
-         "Busco señales de calidad: coherencia, naming, límites claros, tests cuando aportan valor.",
-         "Trabajo con trade-offs: elijo lo que maximiza impacto con el tiempo disponible.",
-      ],
-      differentiators: [
-         {
-            title: "Visión de producto",
-            text: "Pienso en flujos, roles y decisiones técnicas como un producto real, no como tarea suelta.",
-         },
-         {
-            title: "Disciplina + consistencia",
-            text: "Me importa mantener ritmo: pequeñas mejoras acumuladas y refactor con intención.",
-         },
-         {
-            title: "Comunicación técnica",
-            text: "Me gusta documentar decisiones y explicar trade-offs de forma simple.",
-         },
-      ],
-      disciplineBridge: [
-         "La disciplina personal (entrenamiento, constancia, objetivos) se refleja en cómo desarrollo: progreso incremental, foco y mejora continua.",
-         "Me ayuda a sostener proyectos largos, manejar frustración y mantener estándares.",
-      ],
-   },
-] as const;
+
+export const aboutEs: AboutContent = {
+   whoIAm: [
+      "Soy Aquiles Cancinos, estudiante de Ingeniería Informática con foco en crear productos que resuelvan problemas reales.",
+      "Me considero disciplinado, adaptable y autodidacta. Aprendo algo nuevo cada día y busco crecer a largo plazo, tanto en lo técnico como en lo personal.",
+      "Disfruto el trabajo en equipo: creo que la colaboración y la comunicación son claves para tomar mejores decisiones y construir mejor software.",
+   ],
+
+   howIThink: [
+      {
+         title: "Arranco por el problema real",
+         text: "Antes de codear, traduzco el contexto en requerimientos y flujos: usuarios, restricciones, estados y riesgos. Busco impacto, no solo que “funcione”.",
+      },
+      {
+         title: "Diseño modular para escalar",
+         text: "Me gusta separar por features y entidades, con límites claros y contratos. Así el sistema crece (roles, módulos, backend) sin reescribirlo.",
+      },
+      {
+         title: "Consistencia y calidad de datos",
+         text: "Prioritizo tipado fuerte, validaciones donde suman y naming coherente. Reducir estados imposibles baja bugs y mejora mantenimiento.",
+      },
+      {
+         title: "UX también es sistema",
+         text: "Un sistema no es solo backend. Estados de UI, navegación, loading/empty states y accesibilidad definen si realmente se usa.",
+      },
+   ],
+
+   disciplineBridge: [
+      "La disciplina personal (hábitos, entrenamiento, objetivos) se refleja en cómo construyo: foco, estándares y mejora continua.",
+      "Me ayuda a sostener proyectos largos, manejar presión y mantener calidad incluso cuando se complica.",
+   ],
+} as const;

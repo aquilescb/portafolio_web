@@ -67,14 +67,7 @@ export function Navbar() {
    }, [location.pathname, location.search, location.hash]);
 
    return (
-      <header
-         className="sticky top-0 z-50 backdrop-blur-xl backdrop-saturate-150"
-         style={{
-            background: "color-mix(in srgb, var(--bg) 60%, transparent)",
-            borderBottom:
-               "1px solid color-mix(in srgb, var(--text) 10%, transparent)",
-         }}
-      >
+      <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg)]/50 backdrop-blur-xl">
          <div className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center px-4">
             {/* Mobile: menu button */}
             <button
@@ -141,7 +134,7 @@ export function Navbar() {
                />
 
                {/* sheet */}
-               <aside className="fixed left-0 top-0 z-50 h-dvh w-[86%] max-w-sm border-r border-[var(--border)] bg-[var(--bg)] p-4 shadow-xl">
+               <aside className="fixed left-0 top-0 z-50 h-dvh w-[86%] max-w-sm border-r border-[var(--border)] bg-[var(--bg)]/70 backdrop-blur-xl p-4 shadow-xl">
                   <div className="flex items-center justify-between">
                      <div className="text-base font-semibold tracking-tight text-[var(--text)]">
                         {t("nav.menu")}

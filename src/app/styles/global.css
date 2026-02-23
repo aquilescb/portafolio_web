@@ -1,32 +1,28 @@
 @import "tailwindcss";
 /* src/app/styles/globals.css */
-
 :root {
-   /* Brand */
-   --primary: #2563eb;
-   --primary-hover: #1d4ed8;
-   --primary-soft: #3b82f6;
+   --primary: #3b82f6; /* blue-500 */
+   --primary-hover: #2563eb;
+   --primary-soft: #93c5fd;
 
-   --secondary: #7c3aed;
-   --secondary-hover: #6d28d9;
-   --secondary-soft: #8b5cf6;
+   --secondary: #8b5cf6; /* violet-500 */
+   --secondary-hover: #7c3aed;
+   --secondary-soft: #c4b5fd;
 
-   /* Light defaults */
-   --bg: #ffffff;
-   --surface: #f8fafc;
+   --bg: #f5f7fb;
+   --surface: #ffffff;
    --text: #0f172a;
-   --muted: #475569;
-   --border: #e2e8f0;
+   --muted: #64748b;
+   --border: #e5e7eb;
 }
 
 html[data-theme="dark"] {
    --bg: #0f172a;
-   --surface: #111827;
-   --text: #e5e7eb;
+   --surface: #131c2f;
+   --border: #1e293b;
+   --text: #f1f5f9;
    --muted: #94a3b8;
-   --border: #1f2937;
 }
-
 /* Base */
 html,
 body {

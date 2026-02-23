@@ -1,6 +1,15 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import {
+   CheckCircle2,
+   AlertTriangle,
+   Github,
+   Linkedin,
+   Instagram,
+   Youtube,
+   ExternalLink,
+} from "lucide-react";
 
 import { Card } from "../../shared/ui/primitives/Card";
 import { Button } from "../../shared/ui/primitives/Button";
@@ -12,6 +21,14 @@ type FormState = "idle" | "submitting" | "success" | "error";
 function isValidEmail(email: string) {
    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 }
+
+type Channel = {
+   key: string;
+   label: string;
+   href: string;
+   Icon: React.ElementType;
+   kind?: "primary" | "neutral";
+};
 
 export function ContactPage() {
    const { t } = useTranslation();
@@ -31,6 +48,41 @@ export function ContactPage() {
    const msgOk = message.trim().length >= 10;
    const canSubmit = emailOk && msgOk && state !== "submitting";
 
+   // 🔧 Cambiá estos links por los tuyos (o movelos a content si después querés)
+   const channels = useMemo<Channel[]>(
+      () => [
+         {
+            key: "github",
+            label: t("contact.channels.github"),
+            href: "https://github.com/aquilescb",
+            Icon: Github,
+            kind: "neutral",
+         },
+         {
+            key: "linkedin",
+            label: t("contact.channels.linkedin"),
+            href: "https://www.linkedin.com/in/aquilescb123/",
+            Icon: Linkedin,
+            kind: "neutral",
+         },
+         {
+            key: "instagram",
+            label: t("contact.channels.instagram"),
+            href: "https://www.instagram.com/aquiles_cb/",
+            Icon: Instagram,
+            kind: "neutral",
+         },
+         {
+            key: "youtube",
+            label: t("contact.channels.youtube"),
+            href: "https://www.youtube.com/@aquiles_cb",
+            Icon: Youtube,
+            kind: "neutral",
+         },
+      ],
+      [t],
+   );
+
    async function onSubmit(e: React.FormEvent) {
       e.preventDefault();
       setError(null);
@@ -45,27 +97,24 @@ export function ContactPage() {
          setState("success");
          setEmail("");
          setMessage("");
+
+         // opcional: volver a idle después de unos segundos
+         window.setTimeout(() => setState("idle"), 3500);
          return;
       }
 
       setState("error");
-      // si el backend/fallback devuelve error en español/inglés, lo mostramos tal cual
       setError(res.error ?? t("contact.errors.generic"));
    }
 
    return (
       <section className="space-y-8">
-         <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25 }}
-         >
+         <div>
             <h1 className="text-2xl font-semibold">{t("contact.title")}</h1>
             <p className="mt-2 max-w-2xl text-sm text-[var(--muted)]">
                {t("contact.subtitle")}
             </p>
-         </motion.div>
-
+         </div>
          <div className="grid gap-6 lg:grid-cols-2">
             {/* Form */}
             <Card className="p-5">
@@ -106,17 +155,62 @@ export function ContactPage() {
                      )}
                   </div>
 
-                  {error && (
-                     <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-sm text-red-500">
-                        {error}
-                     </div>
-                  )}
+                  <AnimatePresence mode="wait">
+                     {error && (
+                        <motion.div
+                           key="error"
+                           initial={{ opacity: 0, y: 6 }}
+                           animate={{ opacity: 1, y: 0 }}
+                           exit={{ opacity: 0, y: 6 }}
+                           className="flex gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3 text-sm text-red-500"
+                        >
+                           <AlertTriangle className="mt-0.5 size-4 shrink-0" />
+                           <span>{error}</span>
+                        </motion.div>
+                     )}
 
-                  {state === "success" && (
-                     <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 text-sm text-[var(--text)]">
-                        {t("contact.success")}
-                     </div>
-                  )}
+                     {state === "success" && (
+                        <motion.div
+                           key="success"
+                           initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                           animate={{ opacity: 1, y: 0, scale: 1 }}
+                           exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                           transition={{ duration: 0.25 }}
+                           className="relative overflow-hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-700 dark:text-emerald-300"
+                        >
+                           {/* mini “shine” */}
+                           <motion.div
+                              aria-hidden
+                              initial={{ x: "-30%" }}
+                              animate={{ x: "130%" }}
+                              transition={{ duration: 1.2, ease: "easeInOut" }}
+                              className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+                           />
+                           <div className="flex items-start gap-3">
+                              <motion.div
+                                 initial={{ scale: 0.8 }}
+                                 animate={{ scale: 1 }}
+                                 transition={{
+                                    type: "spring",
+                                    stiffness: 500,
+                                    damping: 22,
+                                 }}
+                                 className="mt-0.5"
+                              >
+                                 <CheckCircle2 className="size-5 text-emerald-500" />
+                              </motion.div>
+                              <div className="space-y-1">
+                                 <div className="font-semibold text-emerald-700 dark:text-emerald-200">
+                                    {t("contact.success.title")}
+                                 </div>
+                                 <div className="text-emerald-700/90 dark:text-emerald-200/90">
+                                    {t("contact.success.body")}
+                                 </div>
+                              </div>
+                           </div>
+                        </motion.div>
+                     )}
+                  </AnimatePresence>
 
                   <div className="flex flex-wrap gap-3">
                      <Button type="submit" disabled={!canSubmit}>
@@ -150,27 +244,35 @@ export function ContactPage() {
                   {t("contact.side.subtitle")}
                </p>
 
-               <div className="mt-4 space-y-2 text-sm">
-                  <a
-                     className="text-[var(--primary)] hover:underline"
-                     href="https://github.com/TU_USER"
-                     target="_blank"
-                     rel="noreferrer"
-                  >
-                     GitHub
-                  </a>
+               <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {channels.map(({ key, label, href, Icon, kind }) => (
+                     <a
+                        key={key}
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={href.startsWith("http") ? "noreferrer" : undefined}
+                        className={[
+                           "group flex items-center justify-between gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-sm transition",
+                           "hover:-translate-y-[1px] hover:border-[var(--primary-soft)] hover:shadow-sm",
+                           kind === "primary"
+                              ? "ring-1 ring-emerald-500/20"
+                              : "",
+                        ].join(" ")}
+                     >
+                        <span className="flex items-center gap-2">
+                           <span className="grid size-8 place-items-center rounded-lg border border-[var(--border)] bg-[var(--bg)]">
+                              <Icon className="size-4 text-[var(--text)] opacity-80 group-hover:opacity-100" />
+                           </span>
+                           <span className="font-medium">{label}</span>
+                        </span>
 
-                  <div className="text-[var(--muted)]">
-                     {t("contact.side.linkedinHint")}
-                  </div>
-                  <div className="text-[var(--muted)]">
-                     {t("contact.side.emailHint")}
-                  </div>
+                        <ExternalLink className="size-4 text-[var(--muted)] opacity-70 group-hover:opacity-100" />
+                     </a>
+                  ))}
                </div>
-
-               <div className="mt-6 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-sm text-[var(--muted)]">
-                  {t("contact.side.tip")}
-               </div>
+               <p className="mt-4 text-1xl text-[var(--muted)] text-center ">
+                  Email: aquilescancinos@email.com
+               </p>
             </Card>
          </div>
       </section>

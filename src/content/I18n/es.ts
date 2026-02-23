@@ -14,7 +14,6 @@ export const es = {
       "Proyectos destacados con enfoque en arquitectura, decisiones técnicas y resultados.",
 
    "projects.title": "Proyectos",
-   "projects.subtitle": "Arquitectura, decisiones técnicas y resultados.",
    "projects.search": "Buscar proyecto...",
    "projects.all": "Todas",
    "projects.empty": "No se encontraron proyectos con esos filtros.",
@@ -69,6 +68,7 @@ export const es = {
    "journey.subtitle":
       "Educación, certificaciones y logros que marcan mi camino técnico.",
 
+   //About
    "meta.about.title": "Sobre mí",
    "meta.about.desc": "Cómo trabajo, cómo pienso los sistemas y qué valoro.",
 
@@ -77,11 +77,20 @@ export const es = {
    "about.sections.howIThink.title": "Cómo pienso los sistemas",
    "about.sections.howIThink.subtitle":
       "Mi forma de trabajo prioriza claridad, escalabilidad y decisiones justificadas.",
-   "about.sections.workMindset": "Mentalidad de trabajo",
-   "about.sections.differentiators": "Rasgos diferenciales",
    "about.sections.disciplineBridge":
       "Disciplina personal ↔ desarrollo técnico",
 
+   "about.photoAlt": "Foto de Aquiles Cancinos",
+   "about.sections.stack.title": "Tech stack",
+   "about.sections.stack.subtitle":
+      "Herramientas y tecnologías que uso para construir sistemas mantenibles y escalables.",
+
+   "about.cta.title": "¿Construimos algo juntos?",
+   "about.cta.subtitle":
+      "Si querés hablar de una oportunidad, un proyecto o simplemente conectar, escribime.",
+   "about.cta.primary": "Ir a Contacto",
+   "about.cta.secondary": "Ver Proyectos",
+   //Contact
    "meta.contact.title": "Contacto",
    "meta.contact.desc":
       "Enviame un mensaje para hablar de un proyecto, una oportunidad o simplemente conectar.",
@@ -106,12 +115,24 @@ export const es = {
    "contact.actions.send": "Enviar",
    "contact.actions.sending": "Enviando...",
    "contact.actions.clear": "Limpiar",
+   "contact.success.title": "¡Enviado! ",
+   "contact.success.body": "Gracias por escribir. Te respondo apenas pueda.",
+
+   "contact.channels.github": "GitHub",
+   "contact.channels.linkedin": "LinkedIn",
+   "contact.channels.instagram": "Instagram",
+   "contact.channels.youtube": "YouTube",
+   "contact.channels.email": "Email",
 
    "contact.side.title": "Otros canales",
    "contact.side.subtitle": "También podés encontrarme en:",
-   "contact.side.linkedinHint":
-      "LinkedIn (opcional): agregalo cuando lo tengas listo.",
-   "contact.side.emailHint": "Email: tu@email.com",
-   "contact.side.tip":
-      "Tip: si todavía no configuraste Formspree, el envío usa mailto como fallback. Para dejarlo 100% pro, agregá VITE_CONTACT_ENDPOINT en tu .env.",
+   footer: {
+      rights: "Todos los derechos reservados.",
+      role: "Ingeniería Informática",
+      tagline:
+         "Construyendo productos digitales claros, escalables y con propósito.",
+      navigation: "Navegación",
+      social: "Redes",
+      builtWith: "Construido con",
+   },
 } as const;

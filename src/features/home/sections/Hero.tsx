@@ -23,15 +23,6 @@ export function Hero() {
 
    return (
       <section className="relative py-10 md:py-14">
-         {/* fondo suave con tus tokens (más vida sin imagen) */}
-         <div
-            className="pointer-events-none absolute left-1/2 top-[-140px] h-[420px] w-[min(920px,92vw)] -translate-x-1/2 rounded-[999px] blur-3xl opacity-40"
-            style={{
-               background:
-                  "radial-gradient(circle at 20% 40%, var(--primary-soft), transparent 60%), radial-gradient(circle at 80% 25%, var(--secondary-soft), transparent 55%)",
-            }}
-         />
-
          <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             {/* Avatar grande */}
             <motion.div

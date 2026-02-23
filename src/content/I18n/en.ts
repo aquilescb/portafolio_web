@@ -14,9 +14,6 @@ export const en = {
       "Selected projects focused on architecture, technical decisions and results.",
 
    "projects.title": "Projects",
-   "projects.subtitle": "Architecture, technical decisions and results.",
-   "projects.search": "Search project...",
-   "projects.all": "All",
    "projects.empty": "No projects found with those filters.",
    "common.language": "Language",
    "common.toggleTheme": "Toggle theme",
@@ -71,6 +68,7 @@ export const en = {
    "journey.subtitle":
       "Education, certifications, and achievements that shape my technical path.",
 
+   //About
    "meta.about.title": "About",
    "meta.about.desc":
       "How I work, how I think about systems, and what I value.",
@@ -80,10 +78,19 @@ export const en = {
    "about.sections.howIThink.title": "How I think about systems",
    "about.sections.howIThink.subtitle":
       "My approach prioritizes clarity, scalability, and justified decisions.",
-   "about.sections.workMindset": "Work mindset",
-   "about.sections.differentiators": "Differentiators",
    "about.sections.disciplineBridge": "Personal discipline ↔ technical work",
+   "about.photoAlt": "Photo of Aquiles Cancinos",
+   "about.sections.stack.title": "Tech stack",
+   "about.sections.stack.subtitle":
+      "Tools and technologies I use to build maintainable, scalable systems.",
 
+   "about.cta.title": "Want to build something together?",
+   "about.cta.subtitle":
+      "If you’d like to talk about an opportunity, a project, or just connect—send me a message.",
+   "about.cta.primary": "Go to Contact",
+   "about.cta.secondary": "View Projects",
+
+   //Contacto
    "meta.contact.title": "Contact",
    "meta.contact.desc":
       "Send me a message to talk about a project, an opportunity, or just connect.",
@@ -104,17 +111,28 @@ export const en = {
       "The message is too short (minimum 10 characters).",
    "contact.errors.generic": "Something went wrong. Please try again.",
 
-   "contact.success":
-      " Message sent. Thanks! I'll get back to you as soon as I can.",
+   "contact.channels.github": "GitHub",
+   "contact.channels.linkedin": "LinkedIn",
+   "contact.channels.instagram": "Instagram",
+   "contact.channels.youtube": "YouTube",
+   "contact.channels.email": "Email",
+   "contact.success.title": "Sent! ",
+   "contact.success.body":
+      "Thanks for reaching out. I’ll reply as soon as I can.",
    "contact.actions.send": "Send",
    "contact.actions.sending": "Sending...",
    "contact.actions.clear": "Clear",
 
    "contact.side.title": "Other channels",
    "contact.side.subtitle": "You can also find me on:",
-   "contact.side.linkedinHint":
-      "LinkedIn (optional): add it when you have it ready.",
-   "contact.side.emailHint": "Email: you@email.com",
-   "contact.side.tip":
-      "Tip: if you haven't configured Formspree yet, sending uses mailto as a fallback. To make it 100% pro, add VITE_CONTACT_ENDPOINT to your .env.",
+
+   //Footer
+   footer: {
+      rights: "All rights reserved.",
+      role: "Software Engineering",
+      tagline: "Building clear, scalable and purposeful digital products.",
+      navigation: "Navigation",
+      social: "Social",
+      builtWith: "Built with",
+   },
 } as const;
