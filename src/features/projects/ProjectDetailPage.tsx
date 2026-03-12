@@ -53,36 +53,67 @@ export function ProjectDetailPage() {
    const solution =
       project.solution ?? t("projects.detail.placeholders.solution");
 
-   const results = project.results?.length
-      ? project.results
-      : [t("projects.detail.placeholders.results")];
-   const resources = project.resources?.length
-      ? project.resources
-      : project.links;
+   const features = project.features ?? [];
+   const screenshots = project.screenshots ?? [];
+   const resources = project.links ?? [];
 
    return (
       <div className="space-y-10">
          <MotionSection>
-            <ProjectHero project={project} />
+            <div className="space-y-4">
+               <ProjectHero project={project} />
 
-            <ProjectSection title={t("projects.detail.sections.problem")}>
-               {problem}
-            </ProjectSection>
+               <div className="space-y-4">
+                  <ProjectSection title={t("projects.detail.sections.problem")}>
+                     {problem}
+                  </ProjectSection>
 
-            <ProjectSection title={t("projects.detail.sections.solution")}>
-               {solution}
-            </ProjectSection>
+                  <ProjectSection title={t("projects.detail.sections.solution")}>
+                     {solution}
+                  </ProjectSection>
 
-            <ProjectSection title={t("projects.detail.sections.results")}>
-               <ul className="list-disc space-y-1 pl-5">
-                  {results.map((r, idx) => (
-                     <li key={idx}>{r}</li>
-                  ))}
-               </ul>
-            </ProjectSection>
+                  {features.length > 0 && (
+                     <ProjectSection title={t("projects.detail.sections.features")}>
+                        <ul className="list-disc space-y-2 pl-5">
+                           {features.map((feature, idx) => (
+                              <li key={`${project.slug}-feature-${idx}`}>{feature}</li>
+                           ))}
+                        </ul>
+                     </ProjectSection>
+                  )}
+
+                  {screenshots.length > 0 && (
+                     <ProjectSection title={t("projects.detail.sections.screenshots")}>
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                           {screenshots.map((image) => (
+                              <div
+                                 key={`${project.slug}-${image.src}`}
+                                 className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg)]/30"
+                              >
+                                 <div className="relative aspect-[16/10] w-full">
+                                    <img
+                                       src={image.src}
+                                       alt={image.alt}
+                                       className="h-full w-full object-cover"
+                                       loading="lazy"
+                                       decoding="async"
+                                    />
+                                 </div>
+                              </div>
+                           ))}
+                        </div>
+                     </ProjectSection>
+                  )}
+               </div>
+               
+               <ResourceLinks
+                  title={t("projects.detail.sections.links")}
+                  links={resources}
+               />
+            </div>
          </MotionSection>
 
-         <ResourceLinks links={resources} />
+ 
       </div>
    );
 }

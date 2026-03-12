@@ -1,16 +1,6 @@
-export type ProjectTech =
-   | "React"
-   | "TypeScript"
-   | "Vite"
-   | "Tailwind"
-   | "Node"
-   | "NestJS"
-   | "PostgreSQL"
-   | "Prisma"
-   | "Zustand"
-   | "React Router"
-   | "Framer Motion"
-   | "Docker";
+import type { StackItem } from "../stack/types";
+
+export type ProjectTech = StackItem["key"];
 
 export type ProjectLink =
    | { kind: "github"; href: string; label?: string }
@@ -22,34 +12,28 @@ export type ProjectTimeframe = {
    end?: string; // si no existe => en curso
 };
 
+export type ProjectImage = {
+   src: string;
+   alt: string;
+};
+
 export type ProjectPreview = {
    slug: string;
    title: string;
    summary: string;
-   featured: boolean;
+   featured?: boolean;
    role?: string;
-
-   // NUEVO para el listado
    timeframe: ProjectTimeframe;
-   cover?: { src: string; alt: string };
-
-   // Para mostrar iconos/CTAs (repo azul / youtube rojo)
+   cover?: ProjectImage;
+   tech?: readonly ProjectTech[];
    links: readonly ProjectLink[];
 };
 
-// Detalle: extiende el preview
 export type ProjectDetail = ProjectPreview & {
-   description: string;
-
-   // (opcional) si querés ocultar tech en el listado, lo dejás acá
-   tech?: readonly ProjectTech[];
-
    problem?: string;
    solution?: string;
-   architecture?: string;
-   results?: readonly string[];
-   resources?: readonly ProjectLink[];
-   tradeoffs?: string;
-   learnings?: string;
-   nextSteps?: string;
+   features?: readonly string[];
+   screenshots?: readonly ProjectImage[];
+   technologies?: readonly ProjectTech[];
+   links: readonly ProjectLink[];
 };

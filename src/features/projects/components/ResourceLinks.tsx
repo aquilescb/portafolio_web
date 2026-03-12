@@ -24,12 +24,21 @@ function colorClassFor(kind: ProjectLink["kind"]) {
    }
 }
 
-export function ResourceLinks({ links }: { links: readonly ProjectLink[] }) {
+type ResourceLinksProps = {
+   links: readonly ProjectLink[];
+   title?: string;
+};
+
+export function ResourceLinks({
+   links,
+   title = "Recursos",
+}: ResourceLinksProps) {
    if (!links || links.length === 0) return null;
 
    return (
       <Card variant="glass" className="p-5">
-         <h2 className="text-base font-semibold">Recursos</h2>
+         <h2 className="text-base font-semibold">{title}</h2>
+
          <div className="mt-3 grid gap-2">
             {links.map((l) => {
                const Icon = iconFor(l.kind);
@@ -47,6 +56,7 @@ export function ResourceLinks({ links }: { links: readonly ProjectLink[] }) {
                         <Icon className="h-4 w-4" />
                         {l.label ?? l.kind}
                      </span>
+
                      <ExternalLink className="h-4 w-4 text-[var(--muted)]" />
                   </a>
                );

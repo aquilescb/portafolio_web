@@ -1,40 +1,88 @@
-import type {
-   ProjectPreview,
-   ProjectDetail,
-} from "../../entities/project/types";
-import sgiCover from "../../assets/images/projects/novconsultoria.webp";
+import type { ProjectDetail, ProjectPreview } from "../../entities/project/types";
 
-// 1) Definís previews como constantes (reutilizables)
 const sgiPreview: ProjectPreview = {
    slug: "sgi-fundacion-espacios",
    title: "SGI — Fundación Espacios",
    summary:
-      "Sistema de gestión integral: profesionales, agenda, asistencia y roles.",
+      "Integrated management system for professionals, scheduling, attendance tracking, and role-based access control.",
    featured: true,
-   role: "Fullstack (Frontend + Diseño de módulos)",
-   timeframe: { start: "2025-01" }, // sin end => en curso
-   cover: { src: sgiCover, alt: "Dashboard SGI" },
+   role: "Fullstack Developer",
+   timeframe: {
+      start: "2025-01",
+   },
+   cover: {
+      src: "/images/projects/sgi/cover.webp",
+      alt: "Main view of the SGI Fundación Espacios system",
+   },
+   tech: [
+      "react",
+      "typescript",
+      "vite",
+      "tailwind",
+      "zustand",
+      "nestjs",
+      "postgresql",
+      "prisma",
+   ],
    links: [
-      { kind: "github", href: "...", label: "Repo" },
-      { kind: "youtube", href: "...", label: "Demo" },
+      {
+         kind: "github",
+         href: "https://github.com/tuusuario/sgi-fundacion-espacios",
+         label: "GitHub",
+      },
+      {
+         kind: "youtube",
+         href: "https://youtube.com/watch?v=demo-sgi",
+         label: "Video",
+      },
    ],
 };
 
-export const projectPreviews: readonly ProjectPreview[] = [
-   sgiPreview,
-   // ...otros previews
-] as const;
+export const projectPreviews: readonly ProjectPreview[] = [sgiPreview];
 
-// 2) Details por slug, extendiendo el preview correspondiente
 export const projectDetails: Record<string, ProjectDetail> = {
    [sgiPreview.slug]: {
       ...sgiPreview,
-      description:
-         "Producto modular con RBAC, pantallas por rol y modelado orientado a procesos reales.",
-      problem: "...",
-      solution: "...",
-      architecture: "...",
-      results: ["...", "..."],
-      nextSteps: "...",
+      problem:
+         "Managing professionals, schedules, and attendance in social organizations is often handled through disconnected tools or manual processes, making daily coordination, operational follow-up, and role-based access control more difficult.",
+
+      solution:
+         "An integrated management platform was developed to centralize professionals, scheduling, and attendance in a single system. The solution includes role-based permissions, administrative modules, and a clear interface designed to improve day-to-day operations.",
+
+      features: [
+         "Patient and professional management",
+         "Operational scheduling views",
+         "Attendance tracking and follow-up",
+         "Role-based access control",
+         "Reusable administrative modules",
+      ],
+
+      screenshots: [
+         {
+            src: "/images/projects/sgi/cover.webp",
+            alt: "Main screen of the SGI system",
+         },
+         {
+            src: "/images/projects/sgi/agenda.webp",
+            alt: "Professional scheduling view",
+         },
+         {
+            src: "/images/projects/sgi/personal.webp",
+            alt: "Professional management screen",
+         },
+      ],
+
+      technologies: [
+         "react",
+         "typescript",
+         "vite",
+         "tailwind",
+         "zustand",
+         "nestjs",
+         "postgresql",
+         "prisma",
+      ],
+
+      links: sgiPreview.links,
    },
-};
+} as const;

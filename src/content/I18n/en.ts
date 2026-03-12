@@ -34,26 +34,15 @@ export const en = {
 
    "projects.detail.sections.problem": "Problem",
    "projects.detail.sections.solution": "Solution",
-   "projects.detail.sections.architecture":
-      "Architecture & technical decisions",
-   "projects.detail.sections.results": "Impact / Results",
-   "projects.detail.sections.learnings": "Learnings",
-   "projects.detail.sections.nextSteps": "Next steps",
+   "projects.detail.sections.features": "Features",
+   "projects.detail.sections.screenshots": "Screenshots",
+   "projects.detail.sections.technologies": "Technologies",
+   "projects.detail.sections.links": "Links",
 
    "projects.detail.placeholders.problem":
-      "Define the real problem: context, constraints, and why it mattered.",
+      "Describe the real problem: context, constraints, and why it mattered to solve it.",
    "projects.detail.placeholders.solution":
-      "Explain how you solved it: approach, flow, key components, and why it works.",
-   "projects.detail.placeholders.architecture":
-      "Describe architecture, technical decisions, trade-offs, and how it scales.",
-   "projects.detail.placeholders.results":
-      "Add 2–4 measurable results (time, quality, error reduction, etc.).",
-   "projects.detail.placeholders.tradeoffs":
-      "Trade-offs: what you chose NOT to do, what you compared, and why.",
-   "projects.detail.placeholders.learnings":
-      "Learnings: 2–4 concrete takeaways (technical and process).",
-   "projects.detail.placeholders.nextSteps":
-      "Next steps: future improvements (perf, tests, accessibility, backend, etc.).",
+      "Explain how you solved it: approach, main flow, and key technical decisions.",
 
    "meta.projectNotFound.title": "Project not found",
    "meta.projectNotFound.desc": "The requested project was not found.",

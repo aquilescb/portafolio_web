@@ -47,15 +47,26 @@ export type CertificateItem = {
    image?: { src: string; alt: string }; // preview certificado (webp)
    issuerLogo?: { src: string; alt: string };
 };
+export type HighlightKind =
+   | "achievement"
+   | "award"
+   | "hackathon"
+   | "community"
+   | "speaker"
+   | "milestone"
+   | "team";
 
 /** HIGHLIGHTS */
 export type HighlightItem = {
    id: string;
    title: string;
    org?: string;
+   kind: HighlightKind;
    date: DateRange;
+   location?: string;
    description: string;
    tags?: readonly string[];
    links?: readonly Link[];
-   image?: { src: string; alt: string };
+   images?: { src: string; alt: string } [];
+   featured?: boolean;
 };

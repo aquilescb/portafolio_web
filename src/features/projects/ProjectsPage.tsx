@@ -36,9 +36,14 @@ export function ProjectsPage() {
 
    return (
       <section className="space-y-8">
-         <div>
-            <h1 className="text-2xl font-semibold">{t("projects.title")}</h1>
-         </div>
+         <header className="space-y-2">
+            <h1 className="text-2xl font-semibold text-[var(--text)]">
+               {t("projects.title")}
+            </h1>
+            <p className="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+               {t("meta.projects.desc")}
+            </p>
+         </header>
 
          {projects.length > 0 ? (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

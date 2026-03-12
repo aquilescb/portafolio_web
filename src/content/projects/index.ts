@@ -55,9 +55,11 @@ export function getAllTech(lang: ContentLang): readonly ProjectTech[] {
    const set = new Set<ProjectTech>();
 
    previewsByLang[l].forEach((p) => {
-      if ("tech" in p && Array.isArray(p.tech)) {
-         (p.tech as ProjectTech[]).forEach((t) => set.add(t));
-      }
+      p.tech?.forEach((t) => set.add(t));
+   });
+
+   detailsByLang[l].forEach((p) => {
+      p.technologies?.forEach((t) => set.add(t));
    });
 
    return Array.from(set).sort();

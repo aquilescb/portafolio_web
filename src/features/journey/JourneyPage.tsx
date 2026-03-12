@@ -9,9 +9,11 @@ import { Timeline } from "../../entities/journey/JourneyTimeline";
 
 import { EducationItemCard } from "../../entities/journey/EducationItem";
 import { CertificateItemCard } from "../../entities/journey/CertificateItem";
+import { HighlightItemCard } from "../../entities/journey/HighlightItem";
 
 import { getEducation } from "../../content/journey/education";
 import { getCertificates } from "../../content/journey/certificate";
+import { getHighlights } from "../../content/journey/highlights";
 
 const TABS: readonly JourneyTab[] = ["education", "certificate", "highlights"];
 
@@ -29,6 +31,7 @@ export function JourneyPage() {
 
    const education = useMemo(() => getEducation(lang), [lang]);
    const certificates = useMemo(() => getCertificates(lang), [lang]);
+   const highlights = useMemo(() => getHighlights(lang), [lang]);
 
    return (
       <section className="space-y-8">
@@ -39,23 +42,23 @@ export function JourneyPage() {
             </p>
          </div>
 
-         {/* Tabs */}
          <div className="flex flex-wrap gap-2">
             {TABS.map((tab) => {
                const active = tab === activeTab;
+
                return (
                   <button
                      key={tab}
                      type="button"
                      onClick={() => setActiveTab(tab)}
                      className={`
-                rounded-full border px-3 py-1 text-sm transition
-                ${
-                   active
-                      ? "border-[var(--primary)] bg-[color-mix(in_oklab,var(--primary)_14%,transparent)] text-[var(--text)]"
-                      : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--text)]"
-                }
-              `}
+                        rounded-full border px-3 py-1 text-sm transition
+                        ${
+                           active
+                              ? "border-[var(--primary)] bg-[color-mix(in_oklab,var(--primary)_14%,transparent)] text-[var(--text)]"
+                              : "border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--text)]"
+                        }
+                     `}
                   >
                      {t(`journey.tabs.${tab}`)}
                   </button>
@@ -80,9 +83,11 @@ export function JourneyPage() {
          ) : null}
 
          {activeTab === "highlights" ? (
-            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 text-sm text-[var(--muted)]">
-               (Pendiente) Acá van tus hitos: premios, roles, logros, etc.
-            </div>
+            <Timeline
+               items={highlights}
+               getKey={(x) => x.id}
+               renderItem={(x) => <HighlightItemCard item={x} />}
+            />
          ) : null}
       </section>
    );

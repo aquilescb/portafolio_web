@@ -35,27 +35,15 @@ export const es = {
 
    "projects.detail.sections.problem": "Problema",
    "projects.detail.sections.solution": "Solución",
-   "projects.detail.sections.architecture":
-      "Arquitectura y decisiones técnicas",
-   "projects.detail.sections.results": "Impacto / Resultados",
-   "projects.detail.sections.tradeoffs": "Trade-offs",
-   "projects.detail.sections.learnings": "Lecciones aprendidas",
-   "projects.detail.sections.nextSteps": "Próximos pasos",
+   "projects.detail.sections.features": "Funcionalidades",
+   "projects.detail.sections.screenshots": "Screenshots",
+   "projects.detail.sections.technologies": "Tecnologías",
+   "projects.detail.sections.links": "Links",
 
    "projects.detail.placeholders.problem":
-      "Definí el problema real: contexto, restricciones y por qué importaba resolverlo.",
+      "Definí el problema real: contexto, restricciones y por qué era importante resolverlo.",
    "projects.detail.placeholders.solution":
-      "Explicá cómo lo resolviste: enfoque, flujo, componentes clave y por qué funciona.",
-   "projects.detail.placeholders.architecture":
-      "Describí arquitectura, decisiones técnicas, trade-offs, y cómo soporta crecimiento.",
-   "projects.detail.placeholders.results":
-      "Agregá 2–4 resultados medibles (tiempo, calidad, reducción de errores, etc.).",
-   "projects.detail.placeholders.tradeoffs":
-      "Trade-offs: qué decidiste NO hacer, qué opciones comparaste y por qué.",
-   "projects.detail.placeholders.learnings":
-      "Lecciones aprendidas: 2–4 aprendizajes concretos (técnicos y de proceso).",
-   "projects.detail.placeholders.nextSteps":
-      "Próximos pasos: mejoras futuras (perf, tests, accesibilidad, backend, etc.).",
+      "Explicá cómo resolviste el proyecto: enfoque, flujo principal y decisiones clave.",
 
    "meta.projectNotFound.title": "Proyecto no encontrado",
    "meta.projectNotFound.desc": "No se encontró el proyecto solicitado.",
