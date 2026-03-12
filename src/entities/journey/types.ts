@@ -1,13 +1,61 @@
-export type JourneyEventType = "education" | "certification" | "achievement";
+export type JourneyTab = "education" | "certificate" | "highlights";
 
-export type JourneyEvent = {
+/** ISO flexible: "YYYY" | "YYYY-MM" | "YYYY-MM-DD" */
+export type JourneyDate = string;
+
+export type DateRange = {
+   start: JourneyDate;
+   end?: JourneyDate | "Present";
+};
+
+export type Link = {
+   label: string;
+   href: string;
+};
+
+/** EDUCATION */
+export type EducationItem = {
    id: string;
-   type: JourneyEventType;
+   title: string;
+   org: string;
+   location?: string;
+   date: DateRange;
+   description: string;
+   logo?: { src: string; alt: string };
+   tags?: readonly string[];
+   links?: readonly Link[];
+};
+
+/** CERTIFICATES */
+export type CertificateKind = "course" | "certificate" | "bootcamp";
+
+export type CertificateItem = {
+   id: string;
+   title: string;
+   issuer: string; // Udemy, Google, UCASAL, etc.
+   date: DateRange; // normalmente start (y end opcional)
+   kind: CertificateKind;
+
+   // contenido
+   summary: string; // 1-2 líneas
+   learnings?: readonly string[]; // bullets “lo que aprendí”
+   skills?: readonly string[]; // tags
+
+   // evidencia
+   verifyUrl?: string; // link verificable
+   credentialId?: string; // opcional
+   image?: { src: string; alt: string }; // preview certificado (webp)
+   issuerLogo?: { src: string; alt: string };
+};
+
+/** HIGHLIGHTS */
+export type HighlightItem = {
+   id: string;
    title: string;
    org?: string;
-   date: string; // "YYYY" | "YYYY-MM" | "YYYY-MM-DD"
+   date: DateRange;
    description: string;
-   tags?: string[];
-   image?: string; // ruta pública: "/certs/x.png" o "/img/x.jpg"
-   links?: Array<{ label: string; href: string }>;
+   tags?: readonly string[];
+   links?: readonly Link[];
+   image?: { src: string; alt: string };
 };

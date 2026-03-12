@@ -1,14 +1,21 @@
 export const es = {
+   //Navigation
    "nav.home": "Inicio",
    "nav.projects": "Proyectos",
    "nav.experience": "Experiencia",
    "nav.journey": "Trayectoria",
    "nav.about": "Sobre mí",
    "nav.contact": "Contacto",
-
+   //HOME
    "meta.home.title": "Inicio",
    "meta.home.desc":
       "Portfolio profesional de Aquiles Cancinos: proyectos, experiencia y trayectoria.",
+   "home.featured.title": "Proyectos destacados",
+   "home.featured.subtitle":
+      "Una selección de trabajos donde se ve mi enfoque técnico.",
+   "home.featured.viewAll": "Ver todos →",
+
+   //PROJECTS
    "meta.projects.title": "Proyectos",
    "meta.projects.desc":
       "Proyectos destacados con enfoque en arquitectura, decisiones técnicas y resultados.",
@@ -52,22 +59,22 @@ export const es = {
 
    "meta.projectNotFound.title": "Proyecto no encontrado",
    "meta.projectNotFound.desc": "No se encontró el proyecto solicitado.",
-   "home.featured.title": "Proyectos destacados",
-   "home.featured.subtitle":
-      "Una selección de trabajos donde se ve mi enfoque técnico.",
-   "home.featured.viewAll": "Ver todos →",
 
+   //EXPERIENCE
    "meta.experience.title": "Experiencia",
-   "meta.experience.desc": "Roles, responsabilidades e impacto medible.",
    "experience.title": "Experiencia",
-   "experience.subtitle": "Roles, responsabilidades e impacto medible.",
+   "experience.subtitle": "Roles, responsabilidades e impacto.",
+
+   //JOURNEY
    "meta.journey.title": "Trayectoria",
    "meta.journey.desc":
-      "Educación, certificaciones y logros que marcan mi camino técnico.",
+      "Educación, experiencia y momentos destacados que marcan mi trayectoria técnica.",
    "journey.title": "Trayectoria",
    "journey.subtitle":
-      "Educación, certificaciones y logros que marcan mi camino técnico.",
-
+      "Educación, experiencia y momentos destacados que marcan mi trayectoria técnica.",
+   "journey.tabs.education": "Educación",
+   "journey.tabs.certificate": "Certificado",
+   "journey.tabs.highlights": "Hitos",
    //About
    "meta.about.title": "Sobre mí",
    "meta.about.desc": "Cómo trabajo, cómo pienso los sistemas y qué valoro.",

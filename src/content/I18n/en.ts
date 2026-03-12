@@ -1,4 +1,5 @@
 export const en = {
+   //Navigation
    "nav.home": "Home",
    "nav.projects": "Projects",
    "nav.experience": "Experience",
@@ -6,9 +7,15 @@ export const en = {
    "nav.about": "About",
    "nav.contact": "Contact",
 
+   //HOME
    "meta.home.title": "Home",
    "meta.home.desc":
       "Professional portfolio of Aquiles Cancinos: projects, experience and journey.",
+   "home.featured.title": "Featured projects",
+   "home.featured.subtitle":
+      "A selection of work showcasing my technical approach.",
+   "home.featured.viewAll": "View all →",
+   //Projects
    "meta.projects.title": "Projects",
    "meta.projects.desc":
       "Selected projects focused on architecture, technical decisions and results.",
@@ -30,7 +37,6 @@ export const en = {
    "projects.detail.sections.architecture":
       "Architecture & technical decisions",
    "projects.detail.sections.results": "Impact / Results",
-   "projects.detail.sections.tradeoffs": "Trade-offs",
    "projects.detail.sections.learnings": "Learnings",
    "projects.detail.sections.nextSteps": "Next steps",
 
@@ -51,22 +57,21 @@ export const en = {
 
    "meta.projectNotFound.title": "Project not found",
    "meta.projectNotFound.desc": "The requested project was not found.",
-   "home.featured.title": "Featured projects",
-   "home.featured.subtitle":
-      "A selection of work showcasing my technical approach.",
-   "home.featured.viewAll": "View all →",
-
+   //Experience
    "meta.experience.title": "Experience",
-   "meta.experience.desc": "Roles, responsibilities, and measurable impact.",
    "experience.title": "Experience",
-   "experience.subtitle": "Roles, responsibilities, and measurable impact.",
+   "experience.subtitle": "Roles, responsibilities, and impact.",
 
+   //Journey
    "meta.journey.title": "Journey",
    "meta.journey.desc":
-      "Education, certifications, and achievements that shape my technical path.",
+      "Education, experience, and highlights that shape my technical path.",
    "journey.title": "Journey",
    "journey.subtitle":
-      "Education, certifications, and achievements that shape my technical path.",
+      "Education, experience, and highlights that shape my technical path.",
+   "journey.tabs.education": "Education",
+   "journey.tabs.certificate": "Certificate",
+   "journey.tabs.highlights": "Highlights",
 
    //About
    "meta.about.title": "About",

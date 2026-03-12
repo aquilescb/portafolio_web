@@ -12,8 +12,9 @@ export function ExperienceItem({ item }: { item: Experience }) {
          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
                <h3 className="text-base font-semibold">{item.role}</h3>
+
                <p className="mt-1 text-sm text-[var(--muted)]">
-                  <span className="text-[var(--text)] font-medium">
+                  <span className="font-medium text-[var(--text)]">
                      {item.org}
                   </span>
                   {item.orgType ? ` · ${item.orgType}` : ""}
@@ -21,12 +22,20 @@ export function ExperienceItem({ item }: { item: Experience }) {
                </p>
             </div>
 
-            <div className="shrink-0 text-sm text-[var(--muted)]">
+            {/* Badge violeta */}
+            <span
+               className="
+            inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold
+            bg-[color-mix(in_oklab,var(--secondary)_18%,transparent)]
+            text-[var(--secondary)]
+            ring-1 ring-inset ring-[color-mix(in_oklab,var(--secondary)_35%,transparent)]
+          "
+            >
                {formatRange(item.start, item.end)}
-            </div>
+            </span>
          </div>
 
-         <p className="mt-4 text-sm text-[var(--muted)] leading-relaxed">
+         <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">
             {item.summary}
          </p>
 
@@ -49,41 +58,6 @@ export function ExperienceItem({ item }: { item: Experience }) {
                </ul>
             </div>
          </div>
-
-         {(item.tech?.length || item.links?.length) && (
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-               {item.tech?.length ? (
-                  <div className="flex flex-wrap gap-2">
-                     {item.tech.slice(0, 8).map((t) => (
-                        <span
-                           key={t}
-                           className="rounded-full border border-[var(--border)] bg-[var(--bg)] px-3 py-1 text-xs text-[var(--muted)]"
-                        >
-                           {t}
-                        </span>
-                     ))}
-                  </div>
-               ) : (
-                  <span />
-               )}
-
-               {item.links?.length ? (
-                  <div className="flex flex-wrap gap-2">
-                     {item.links.map((l) => (
-                        <a
-                           key={l.href}
-                           href={l.href}
-                           target="_blank"
-                           rel="noreferrer"
-                           className="text-sm text-[var(--primary)] hover:underline"
-                        >
-                           {l.label}
-                        </a>
-                     ))}
-                  </div>
-               ) : null}
-            </div>
-         )}
       </Card>
    );
 }

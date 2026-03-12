@@ -2,54 +2,49 @@ import type { Experience } from "../../entities/experience/types";
 
 export const experienceEs: readonly Experience[] = [
    {
-      id: "sgi-fundacion",
-      role: "Desarrollador Fullstack (enfoque Frontend + arquitectura)",
-      org: "SGI — Fundación Espacios",
-      orgType: "Proyecto",
+      id: "freelancer",
+      role: "Desarrollador Fullstack",
+      org: "Proyectos Freelance y Colaborativos",
+      orgType: "Freelance",
       start: "2025",
       end: "Actualidad",
       summary:
-         "Construcción de un sistema modular con navegación por rol, formularios tipados y enfoque en mantenibilidad.",
+         "Desarrollo de sistemas web Fullstack orientados a negocio, con arquitectura modular, tipado fuerte y enfoque en escalabilidad, mantenibilidad y experiencia de usuario. Disponible para nuevos proyectos y colaboraciones técnicas.",
+
       responsibilities: [
-         "Diseño de arquitectura por módulos (features/entities/shared) para escalar sin acoplamiento.",
-         "Implementación de pantallas por rol (Profesionales, Coordinación, Integradoras) con React Router.",
-         "Formularios con validación consistente y tipado fuerte (DTOs + schemas).",
-         "Componentización UI y diseño consistente con Tailwind (tokens + responsive real).",
+         "Diseño e implementación de arquitecturas Fullstack (Frontend + Backend) con separación clara de responsabilidades y enfoque modular.",
+         "Construcción de APIs y modelado de datos orientados a procesos reales de negocio.",
+         "Desarrollo de interfaces por rol con React Router y control de acceso (RBAC).",
+         "Trabajo colaborativo mediante Git (branching strategy, code reviews y PRs) y comunicación fluida con clientes o equipos técnicos.",
+         "Validación de datos consistente entre frontend y backend (DTOs + schemas) garantizando robustez y tipado fuerte.",
       ],
+
       impact: [
-         "Reducción de inconsistencias en formularios al centralizar validaciones y tipos.",
-         "Mejor mantenibilidad: módulos aislados y componentes reutilizables.",
+         "Entrega de productos escalables y mantenibles alineados a requerimientos reales de negocio.",
+         "Mejora en tiempos de desarrollo gracias a arquitectura reutilizable y componentización consistente.",
+         "Experiencia de usuario optimizada mediante diseño responsive y enfoque UX.",
       ],
-      tech: [
-         "React",
-         "TypeScript",
-         "Vite",
-         "Tailwind",
-         "React Router",
-         "Zustand",
-      ],
-      links: [{ label: "Repositorio", href: "https://github.com/tu-user/sgi" }],
    },
    {
-      id: "ciro",
-      role: "Product + Desarrollador Fullstack",
-      org: "CIRO — Gestor de Turnos (NOVA Barber)",
-      orgType: "Proyecto",
-      start: "2024",
-      end: "2025",
+      id: "electoral-operator",
+      role: "Operador de Sistemas Electorales",
+      org: "Tribunal Electoral de Salta",
+      orgType: "Gobierno",
+      start: "Abril 2025",
+      end: "Mayo 2025",
       summary:
-         "Sistema orientado a operaciones: turnos, estados, flujo de atención y visión por sucursal.",
+         "Responsable de supervisar y dar soporte operativo al sistema de voto electrónico durante las elecciones provinciales. Coordiné auxiliares, resolví incidentes técnicos en tiempo real y aseguré una transmisión confiable de los votos en los establecimientos asignados.",
+
       responsibilities: [
-         "Relevamiento de flujo real del negocio y traducción a historias de usuario.",
-         "Modelado de estados del turno y pantallas para recepción/administración.",
-         "Construcción de UI operativa con foco en velocidad y claridad.",
+         "Soporte técnico en sitio: diagnóstico y resolución de inconvenientes con equipos informáticos durante la jornada.",
+         "Verificación previa y durante la elección de conectividad y condiciones necesarias para la transmisión de datos.",
+         "Coordinación y comunicación constante con auxiliares para asegurar el cumplimiento de tareas y procedimientos.",
+         "Control y seguimiento del proceso de transmisión para garantizar consistencia y confiabilidad en el envío de resultados.",
       ],
+
       impact: [
-         "Estandarización del proceso de turnos y reducción de fricción operativa.",
-      ],
-      tech: ["React", "TypeScript", "Tailwind", "PostgreSQL"],
-      links: [
-         { label: "Repositorio", href: "https://github.com/tu-user/ciro" },
+         "Contribuí a una entrega confiable y ordenada de los votos en los establecimientos asignados, minimizando interrupciones operativas.",
+         "Mejoré habilidades de comunicación, organización y liderazgo coordinando múltiples personas en un contexto de alta presión y tiempos críticos.",
       ],
    },
 ] as const;
