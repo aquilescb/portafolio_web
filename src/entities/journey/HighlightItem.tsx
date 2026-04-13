@@ -10,10 +10,7 @@ export function HighlightItemCard({ item }: { item: HighlightItem }) {
    const images = item.images ?? [];
 
    return (
-      <Card
-         variant={item.featured ? "elevated" : "default"}
-         className="p-6"
-      >
+      <Card variant={item.featured ? "elevated" : "default"} className="p-6">
          <div className="space-y-4">
             {/* Header */}
             <div>
@@ -34,9 +31,7 @@ export function HighlightItemCard({ item }: { item: HighlightItem }) {
             </div>
 
             {/* Description */}
-            <p className="text-sm text-[var(--text)]/90">
-               {item.description}
-            </p>
+            <p className="text-sm text-[var(--text)]/90">{item.description}</p>
 
             {/* Tags */}
             {item.tags?.length ? (
@@ -61,8 +56,8 @@ export function HighlightItemCard({ item }: { item: HighlightItem }) {
                         images.length === 1
                            ? "grid-cols-1"
                            : images.length === 2
-                           ? "grid-cols-2"
-                           : "grid-cols-3"
+                             ? "grid-cols-2"
+                             : "grid-cols-3"
                      }
                   `}
                >
@@ -80,7 +75,7 @@ export function HighlightItemCard({ item }: { item: HighlightItem }) {
                            alt={img.alt}
                            loading="lazy"
                            className="
-                              h-32 w-full object-cover
+                              h-60 w-full object-cover
                               transition-transform
                               hover:scale-105
                            "

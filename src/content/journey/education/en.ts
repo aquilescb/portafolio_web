@@ -1,7 +1,7 @@
 import type { EducationItem } from "../../../entities/journey/types";
-import ucasal from "../../../assets/images/journey/Ucasal.webp";
-import culturabritanica from "../../../assets/images/journey/culturabritanica.webp";
-import saralona from "../../../assets/images/journey/saralona.webp";
+import ucasal from "../../../assets/images/journey/Education/Ucasal.webp";
+import culturabritanica from "../../../assets/images/journey/Education/culturabritanica.webp";
+import saralona from "../../../assets/images/journey/Education/saralona.webp";
 export const journeyEn: readonly EducationItem[] = [
    {
       id: "edu-ucasal",
