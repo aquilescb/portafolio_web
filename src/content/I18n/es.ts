@@ -121,13 +121,23 @@ export const es = {
 
    "contact.side.title": "Otros canales",
    "contact.side.subtitle": "También podés encontrarme en:",
+   //Footer
    footer: {
-      rights: "Todos los derechos reservados.",
+      rights: "All rights reserved.",
       role: "Ingeniería Informática",
       tagline:
          "Construyendo productos digitales claros, escalables y con propósito.",
       navigation: "Navegación",
       social: "Redes",
       builtWith: "Construido con",
+
+      links: {
+         home: "Inicio",
+         projects: "Proyectos",
+         experience: "Experiencia",
+         journey: "Trayectoria",
+         about: "Sobre mí",
+         contact: "Contacto",
+      },
    },
 } as const;

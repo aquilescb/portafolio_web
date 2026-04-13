@@ -128,5 +128,14 @@ export const en = {
       navigation: "Navigation",
       social: "Social",
       builtWith: "Built with",
+
+      links: {
+         home: "Home",
+         projects: "Projects",
+         experience: "Experience",
+         journey: "Journey",
+         about: "About",
+         contact: "Contact",
+      },
    },
 } as const;

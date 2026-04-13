@@ -4,7 +4,9 @@ import { ThemeContext, type Theme } from "./ThemeContext";
 const STORAGE_KEY = "ac-theme";
 
 function getInitialTheme(): Theme {
-   const saved = localStorage.getItem(STORAGE_KEY);
+   if (typeof window === "undefined") return "light";
+
+   const saved = window.localStorage.getItem(STORAGE_KEY);
    if (saved === "light" || saved === "dark") return saved;
 
    const prefersDark = window.matchMedia(

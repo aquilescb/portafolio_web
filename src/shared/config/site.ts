@@ -2,8 +2,8 @@ export const site = {
    name: "Aquiles Cancinos",
    titleTemplate: "%s · Aquiles Cancinos",
    description:
-      "Portfolio profesional: proyectos, experiencia y trayectoria. React + TypeScript + arquitectura escalable.",
+      "Portfolio web de Aquiles Cancinos, desarrollador frontend enfocado en experiencias modernas, rendimiento y arquitectura escalable.",
    url: "",
-   ogImage: "/og/og-default.png",
-   twitterHandle: "", // opcional: "@usuario"
+   ogImage: "",
+   twitterHandle: "",
 } as const;

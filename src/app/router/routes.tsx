@@ -47,6 +47,12 @@ const ContactPage = React.lazy(() =>
    })),
 );
 
+const NotFoundPage = React.lazy(() =>
+   import("../../features/system/page/NotFoundPage").then((m) => ({
+      default: m.NotFoundPage,
+   })),
+);
+
 export const router = createBrowserRouter([
    {
       path: "/",
@@ -71,5 +77,9 @@ export const router = createBrowserRouter([
          { path: "about", element: withSuspense(<AboutPage />) },
          { path: "contact", element: withSuspense(<ContactPage />) },
       ],
+   },
+   {
+      path: "*",
+      element: withSuspense(<NotFoundPage />),
    },
 ]);

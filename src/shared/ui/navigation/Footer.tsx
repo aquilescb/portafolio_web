@@ -27,34 +27,34 @@ export function Footer() {
                   </h4>
                   <div className="flex flex-col gap-2 text-sm text-[var(--muted)]">
                      <NavLink to="/" className="hover:text-[var(--text)]">
-                        Inicio
+                        {t("footer.links.home")}
                      </NavLink>
                      <NavLink
                         to="/projects"
                         className="hover:text-[var(--text)]"
                      >
-                        Proyectos
+                        {t("footer.links.projects")}
                      </NavLink>
                      <NavLink
                         to="/experience"
                         className="hover:text-[var(--text)]"
                      >
-                        Experiencia
+                        {t("footer.links.experience")}
                      </NavLink>
                      <NavLink
                         to="/journey"
                         className="hover:text-[var(--text)]"
                      >
-                        Trayectoria
+                        {t("footer.links.journey")}
                      </NavLink>
                      <NavLink to="/about" className="hover:text-[var(--text)]">
-                        Sobre mí
+                        {t("footer.links.about")}
                      </NavLink>
                      <NavLink
                         to="/contact"
                         className="hover:text-[var(--text)]"
                      >
-                        Contacto
+                        {t("footer.links.contact")}
                      </NavLink>
                   </div>
                </div>

@@ -30,7 +30,7 @@ export async function sendContact(
       const body = encodeURIComponent(
          `Email: ${email}\n\nMensaje:\n${message}`,
       );
-      window.location.href = `mailto:TU_MAIL@DOMINIO.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:aquilescancinos0707@gmail.com?subject=${subject}&body=${body}`;
       return { ok: true };
    }
 
