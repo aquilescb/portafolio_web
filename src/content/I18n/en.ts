@@ -59,7 +59,7 @@ export const en = {
    "journey.subtitle":
       "Education, experience, and highlights that shape my technical path.",
    "journey.tabs.education": "Education",
-   "journey.tabs.certificate": "Certificate",
+   "journey.tabs.certificate": "Certificates",
    "journey.tabs.highlights": "Highlights",
 
    //About

@@ -61,7 +61,7 @@ export const es = {
    "journey.subtitle":
       "Educación, experiencia y momentos destacados que marcan mi trayectoria técnica.",
    "journey.tabs.education": "Educación",
-   "journey.tabs.certificate": "Certificado",
+   "journey.tabs.certificate": "Certificados",
    "journey.tabs.highlights": "Hitos",
    //About
    "meta.about.title": "Sobre mí",

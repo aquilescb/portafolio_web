@@ -1,6 +1,7 @@
 import type { HighlightItem } from "../../../entities/journey/types";
 import saltalab1 from "../../../assets/images/journey/highlight/saltalab1.webp";
 import saltalab2 from "../../../assets/images/journey/highlight/saltalab2.webp";
+
 export const highlightsEn: readonly HighlightItem[] = [
    {
       id: "hackathon-saltalab",
@@ -11,16 +12,23 @@ export const highlightsEn: readonly HighlightItem[] = [
       location: "Salta, Argentina",
 
       description:
-         "Winning project of the Salta Lab program. We proposed an urban mobility module for the official 'Munisalta' app, featuring a citizen reporting system (roadblocks, potholes, detours) and a real-time smart parking map.",
+         "Winning project of the SaltaLAB program focused on improving urban mobility and citizen engagement through technology. We designed a proposal to enhance the official 'MuniSalta' app by integrating a real-time citizen reporting system (roadblocks, incidents, detours) and a smart parking map. The solution addresses key challenges such as traffic congestion, lack of real-time information, and low citizen interaction with municipal digital tools, promoting a more connected, efficient, and participatory city.The team profiles are: ",
 
-      tags: ["Munisalta App", "Teamwork", "Citizen Reporting", "Prototyping"],
+      tags: [
+         "MuniSalta App",
+         "Smart City",
+         "Teamwork",
+         "Citizen Engagement",
+         "Prototyping",
+      ],
+
       links: [
          {
-            label: "Read article MunicipalidadSalta",
+            label: "Read article Municipalidad de Salta",
             href: "https://prensa.municipalidadsalta.gob.ar/proyecto-ganador-de-salta-lab-propone-optimizar-la-movilidad-urbana/",
          },
          {
-            label: "Read article Tribuno",
+            label: "Read article El Tribuno",
             href: "https://www.eltribuno.com/salta/2026-1-23-18-57-0-salta-pue-el-proyecto-de-alumnos-de-ucasal-que-gano-el-programa-municipal-salta-lab",
          },
          {
@@ -36,6 +44,7 @@ export const highlightsEn: readonly HighlightItem[] = [
             href: "https://www.youtube.com/watch?v=eWszPJaOOQ4",
          },
       ],
+
       images: [
          {
             src: saltalab1,
@@ -46,20 +55,12 @@ export const highlightsEn: readonly HighlightItem[] = [
             alt: "Salta Pue - SaltaLAB Winner",
          },
       ],
-
       featured: true,
-   },
-
-   {
-      id: "portfolio-launch",
-      title: "Professional Portfolio Launch",
-      org: "Personal Project",
-      kind: "milestone",
-      date: { start: "2026" },
-
-      description:
-         "Design and development of my portfolio featuring scalable architecture, bilingual support, and a focus on professional visual identity.",
-
-      tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      peopleIds: [
+         "tomas-mollinedo",
+         "maria-pellicer",
+         "ramon-sutara",
+         "julieta-juri",
+      ],
    },
 ];

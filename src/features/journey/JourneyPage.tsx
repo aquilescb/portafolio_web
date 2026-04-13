@@ -14,6 +14,7 @@ import { HighlightItemCard } from "../../entities/journey/HighlightItem";
 import { getEducation } from "../../content/journey/education";
 import { getCertificates } from "../../content/journey/certificate";
 import { getHighlights } from "../../content/journey/highlights";
+import { people } from "../../content/people";
 
 const TABS: readonly JourneyTab[] = ["education", "certificate", "highlights"];
 
@@ -32,6 +33,11 @@ export function JourneyPage() {
    const education = useMemo(() => getEducation(lang), [lang]);
    const certificates = useMemo(() => getCertificates(lang), [lang]);
    const highlights = useMemo(() => getHighlights(lang), [lang]);
+
+   const peopleMap = useMemo(
+      () => Object.fromEntries(people.map((person) => [person.id, person])),
+      [],
+   );
 
    return (
       <section className="space-y-8">
@@ -86,7 +92,9 @@ export function JourneyPage() {
             <Timeline
                items={highlights}
                getKey={(x) => x.id}
-               renderItem={(x) => <HighlightItemCard item={x} />}
+               renderItem={(x) => (
+                  <HighlightItemCard item={x} peopleMap={peopleMap} />
+               )}
             />
          ) : null}
       </section>

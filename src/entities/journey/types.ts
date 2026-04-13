@@ -67,6 +67,7 @@ export type HighlightItem = {
    description: string;
    tags?: readonly string[];
    links?: readonly Link[];
-   images?: { src: string; alt: string } [];
+   images?: { src: string; alt: string }[];
    featured?: boolean;
+   peopleIds?: string[];
 };

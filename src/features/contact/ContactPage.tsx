@@ -176,16 +176,8 @@ export function ContactPage() {
                            animate={{ opacity: 1, y: 0, scale: 1 }}
                            exit={{ opacity: 0, y: 8, scale: 0.98 }}
                            transition={{ duration: 0.25 }}
-                           className="relative overflow-hidden rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-700 dark:text-emerald-300"
+                           className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-800 dark:bg-emerald-900/40"
                         >
-                           {/* mini “shine” */}
-                           <motion.div
-                              aria-hidden
-                              initial={{ x: "-30%" }}
-                              animate={{ x: "130%" }}
-                              transition={{ duration: 1.2, ease: "easeInOut" }}
-                              className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
-                           />
                            <div className="flex items-start gap-3">
                               <motion.div
                                  initial={{ scale: 0.8 }}
@@ -195,15 +187,16 @@ export function ContactPage() {
                                     stiffness: 500,
                                     damping: 22,
                                  }}
-                                 className="mt-0.5"
+                                 className="mt-0.5 shrink-0"
                               >
-                                 <CheckCircle2 className="size-5 text-emerald-500" />
+                                 <CheckCircle2 className="size-5 text-emerald-600 dark:text-emerald-400" />
                               </motion.div>
+
                               <div className="space-y-1">
-                                 <div className="font-semibold text-emerald-700 dark:text-emerald-200">
+                                 <div className="font-semibold text-[var(--text)]">
                                     {t("contact.success.title")}
                                  </div>
-                                 <div className="text-emerald-700/90 dark:text-emerald-200/90">
+                                 <div className="text-sm text-[var(--muted)]">
                                     {t("contact.success.body")}
                                  </div>
                               </div>
