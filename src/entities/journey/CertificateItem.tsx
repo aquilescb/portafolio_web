@@ -2,8 +2,7 @@ import { Card } from "../../shared/ui/primitives/Card";
 import type { CertificateItem } from "./types";
 
 function formatRange(r: CertificateItem["date"]) {
-   const end = r.end ?? "Present";
-   return `${r.start} — ${end}`;
+   return r.end ? `${r.start} - ${r.end}` : r.start;
 }
 
 function kindLabel(k: CertificateItem["kind"]) {
@@ -94,7 +93,7 @@ export function CertificateItemCard({ item }: { item: CertificateItem }) {
                   transition
                 "
                      >
-                        Verificar
+                        Ir a credencial
                      </a>
                   ) : null}
 
@@ -114,17 +113,6 @@ export function CertificateItemCard({ item }: { item: CertificateItem }) {
                      </a>
                   ) : null}
                </div>
-
-               {item.image ? (
-                  <div className="mt-4 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
-                     <img
-                        src={item.image.src}
-                        alt={item.image.alt}
-                        className="h-auto w-full object-cover"
-                        loading="lazy"
-                     />
-                  </div>
-               ) : null}
             </div>
 
             {/* Right (issuer logo) */}
