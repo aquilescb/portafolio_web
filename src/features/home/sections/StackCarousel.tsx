@@ -54,16 +54,12 @@ export function StackCarousel() {
                style={{ willChange: "transform" }}
             >
                {items.map(({ key, label, icon }, idx) => (
-                  <motion.div
-                     key={`${key}-${idx}`}
-                     whileHover={{ y: -2 }}
-                     className="shrink-0"
-                  >
-                     <div className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--text)] transition-colors hover:border-[var(--primary)]/40">
-                        <img src={icon} className="h-4 w-4" alt={label} />
+                  <div key={`${key}-${idx}`} className="shrink-0">
+                     <div className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--text)] transition-all duration-150 hover:-translate-y-0.5 hover:border-[var(--primary)]/40">
+                        <img src={icon} width={16} height={16} alt={label} />
                         <span>{label}</span>
                      </div>
-                  </motion.div>
+                  </div>
                ))}
             </motion.div>
          </Card>

@@ -63,6 +63,11 @@ export const es = {
    "journey.tabs.education": "Educación",
    "journey.tabs.certificate": "Certificados",
    "journey.tabs.highlights": "Hitos",
+   "journey.certificate.kind.course": "Curso",
+   "journey.certificate.kind.certificate": "Certificado",
+   "journey.certificate.kind.bootcamp": "Bootcamp",
+   "journey.certificate.actions.verify": "Ir a credencial",
+   "journey.certificate.actions.view": "Ver certificado",
    //About
    "meta.about.title": "Sobre mí",
    "meta.about.desc": "Cómo trabajo, cómo pienso los sistemas y qué valoro.",

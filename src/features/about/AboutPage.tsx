@@ -9,7 +9,7 @@ import { AboutSection } from "./components/AboutSection";
 import { InfoCard } from "./components/InfoCard";
 import { usePageMeta } from "../../shared/hooks/usePageMeta";
 import { STACK } from "../../entities/stack/stack";
-import me from "../../assets/images/profile.jpg";
+import me from "../../assets/images/profile.webp";
 
 import { AboutPhotoStrip } from "./components/AboutPhotoStrip";
 export function AboutPage() {
@@ -24,13 +24,8 @@ export function AboutPage() {
 
    const about = useMemo(() => getAbout(lang), [lang]);
    const photos = useMemo(
-      () =>
-         [
-            { src: me, alt: "Aquiles — foto 1" },
-            { src: me, alt: "Aquiles — foto 2" },
-            { src: me, alt: "Aquiles — foto 3" },
-         ] as const,
-      [],
+      () => [{ src: me, alt: t("about.photoAlt") }],
+      [t],
    );
    const groupedStack = useMemo(() => {
       return {

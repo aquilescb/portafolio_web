@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import { useContentLang } from "../../shared/hooks/useContentLang";
@@ -72,31 +73,39 @@ export function JourneyPage() {
             })}
          </div>
 
-         {activeTab === "education" ? (
-            <Timeline
-               items={education}
-               getKey={(x) => x.id}
-               renderItem={(x) => <EducationItemCard item={x} />}
-            />
-         ) : null}
-
-         {activeTab === "certificate" ? (
-            <Timeline
-               items={certificates}
-               getKey={(x) => x.id}
-               renderItem={(x) => <CertificateItemCard item={x} />}
-            />
-         ) : null}
-
-         {activeTab === "highlights" ? (
-            <Timeline
-               items={highlights}
-               getKey={(x) => x.id}
-               renderItem={(x) => (
-                  <HighlightItemCard item={x} peopleMap={peopleMap} />
+         <AnimatePresence mode="wait">
+            <motion.div
+               key={activeTab}
+               initial={{ opacity: 0, y: 6 }}
+               animate={{ opacity: 1, y: 0 }}
+               exit={{ opacity: 0, y: -6 }}
+               transition={{ duration: 0.18 }}
+            >
+               {activeTab === "education" && (
+                  <Timeline
+                     items={education}
+                     getKey={(x) => x.id}
+                     renderItem={(x) => <EducationItemCard item={x} />}
+                  />
                )}
-            />
-         ) : null}
+               {activeTab === "certificate" && (
+                  <Timeline
+                     items={certificates}
+                     getKey={(x) => x.id}
+                     renderItem={(x) => <CertificateItemCard item={x} />}
+                  />
+               )}
+               {activeTab === "highlights" && (
+                  <Timeline
+                     items={highlights}
+                     getKey={(x) => x.id}
+                     renderItem={(x) => (
+                        <HighlightItemCard item={x} peopleMap={peopleMap} />
+                     )}
+                  />
+               )}
+            </motion.div>
+         </AnimatePresence>
       </section>
    );
 }

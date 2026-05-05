@@ -59,12 +59,10 @@ export function Navbar() {
       [],
    );
 
-   // Cerrar menú mobile al navegar
-   // (si cambian pathname/search/hash, cierra)
    useEffect(() => {
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      if (mobileOpen) setMobileOpen(false);
-   }, [location.pathname, location.search, location.hash, mobileOpen]);
+      setMobileOpen(false);
+   }, [location.pathname, location.search, location.hash]);
 
    return (
       <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg)]/50 backdrop-blur-xl">

@@ -6,7 +6,7 @@ import { useContentLang } from "../../../shared/hooks/useContentLang";
 import { getHeroContent } from "../../../content/home";
 
 // ajustá a tu path real
-import avatar from "../../../assets/images/profile.jpg";
+import avatar from "../../../assets/images/profile.webp";
 
 const fadeUp = {
    hidden: { opacity: 0, y: 10 },
@@ -53,8 +53,11 @@ export function Hero() {
                   <img
                      src={avatar}
                      alt={hero.name}
+                     width={160}
+                     height={160}
                      className="h-full w-full object-cover"
-                     loading="eager"
+                     fetchPriority="high"
+                     decoding="async"
                   />
                </div>
 

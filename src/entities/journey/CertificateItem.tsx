@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Card } from "../../shared/ui/primitives/Card";
 import type { CertificateItem } from "./types";
 
@@ -5,20 +6,9 @@ function formatRange(r: CertificateItem["date"]) {
    return r.end ? `${r.start} - ${r.end}` : r.start;
 }
 
-function kindLabel(k: CertificateItem["kind"]) {
-   switch (k) {
-      case "course":
-         return "Course";
-      case "certificate":
-         return "Certificate";
-      case "bootcamp":
-         return "Bootcamp";
-      default:
-         return "Certificate";
-   }
-}
-
 export function CertificateItemCard({ item }: { item: CertificateItem }) {
+   const { t } = useTranslation();
+   const kindKey = `journey.certificate.kind.${item.kind}` as const;
    return (
       <Card className="p-6">
          <div className="flex items-start justify-between gap-6">
@@ -33,7 +23,7 @@ export function CertificateItemCard({ item }: { item: CertificateItem }) {
                 px-3 py-1 text-xs text-[var(--text)]
               "
                   >
-                     {kindLabel(item.kind)}
+                     {t(kindKey)}
                   </span>
 
                   <div className="text-base font-semibold">{item.title}</div>
@@ -93,7 +83,7 @@ export function CertificateItemCard({ item }: { item: CertificateItem }) {
                   transition
                 "
                      >
-                        Ir a credencial
+                        {t("journey.certificate.actions.verify")}
                      </a>
                   ) : null}
 
@@ -109,7 +99,7 @@ export function CertificateItemCard({ item }: { item: CertificateItem }) {
                   transition
                 "
                      >
-                        Ver certificado
+                        {t("journey.certificate.actions.view")}
                      </a>
                   ) : null}
                </div>

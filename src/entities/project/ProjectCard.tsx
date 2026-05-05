@@ -29,7 +29,7 @@ export function ProjectCard({ project }: { project: ProjectPreview }) {
    const timeframeLabel = formatProjectTimeframe(lang, project.timeframe);
 
    return (
-      <Card className="group overflow-hidden border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur-xl transition-shadow hover:shadow-md">
+      <Card className="group overflow-hidden border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur-xl transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--primary)]/40 hover:shadow-md">
          {/* Cover clickeable */}
          <Link to={`/projects/${project.slug}`} className="block">
             {project.cover ? (
@@ -64,7 +64,7 @@ export function ProjectCard({ project }: { project: ProjectPreview }) {
                <div className="flex items-center gap-2">
                   {github && (
                      <a href={github.href} target="_blank" rel="noreferrer">
-                        <Github />
+                        <Github className="h-4 w-4" />
                      </a>
                   )}
                   {youtube && (
@@ -74,7 +74,7 @@ export function ProjectCard({ project }: { project: ProjectPreview }) {
                         rel="noreferrer"
                         className="text-red-500"
                      >
-                        <Youtube />
+                        <Youtube className="h-4 w-4" />
                      </a>
                   )}
                   {live && (
@@ -84,7 +84,7 @@ export function ProjectCard({ project }: { project: ProjectPreview }) {
                         rel="noreferrer"
                         className="text-[var(--text)]"
                      >
-                        <ExternalLink />
+                        <ExternalLink className="h-4 w-4" />
                      </a>
                   )}
                </div>
